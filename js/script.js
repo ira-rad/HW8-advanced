@@ -39,7 +39,7 @@ let student = new Student(
 class BudgetStudent extends Student {
   constructor(university, course, fullName) {
     super(university, course, fullName);
-    setInterval(() => this.scholarship, 30000);
+    setInterval(() => this.getScholarship, 30000);
   }
 
   getScholarship() {
