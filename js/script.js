@@ -39,13 +39,13 @@ let student = new Student(
 class BudgetStudent extends Student {
   constructor(university, course, fullName) {
     super(university, course, fullName);
-    setInterval(() => this.getScholarship, 30000);
+    setInterval(() => this.getScholarship(), 30000);
   }
 
   getScholarship() {
-    return this.getAverageMark() > 4
-      ? "Ви отримали 1400 грн. стипендії"
-      : "Ви не отримуете стипендію";
+    return this.getAverageMark() > 4 || this.student !== false
+      ? console.log("Ви отримали 1400 грн. стипендії")
+      : console.log("Ви не отримуете стипендію");
   }
 }
 
@@ -64,4 +64,3 @@ student.dismiss();
 console.log(student.marks);
 student.recover();
 console.log(student.marks);
-console.log(budgetStudent.getScholarship());
